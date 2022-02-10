@@ -12,7 +12,7 @@ pipeline {
             steps{
             	echo 'Docker Build & Test'
             	bat 'docker-compose up -d'
-		bat 'npm --prefix ./frontend test -- --watchAll=false'
+		//bat 'npm --prefix ./frontend test -- --watchAll=false'
             }
         }
         stage('Release') {
