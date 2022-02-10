@@ -1,7 +1,9 @@
-FROM node:alpine
-WORKDIR /usr/app
+FROM node:latest
+WORKDIR /app
+
 COPY package*.json ./
-RUN npm i
-COPY . .
+COPY ./ ./
+RUN npm install
+
 EXPOSE 3000
 CMD ["npm","start"]
