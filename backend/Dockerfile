@@ -1,7 +1,7 @@
 FROM node:alpine
-WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
-COPY ./ ./
+WORKDIR /usr/app
+COPY package*.json ./
 RUN npm i
-CMD ["npm", "start"]
+COPY . .
+EXPOSE 3001
+CMD ["npm","start"]
