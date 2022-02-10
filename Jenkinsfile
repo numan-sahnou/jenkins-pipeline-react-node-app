@@ -7,16 +7,11 @@ pipeline {
 	        bat 'docker -v'
 	      }
 	    }
-        stage('Docker Build') {
+        stage('Docker Test Integration') {
             steps{
-            	echo 'Docker Build'
+            	echo 'Docker Build & Test'
             	bat 'docker-compose up --build -d'
-            }
-        }
-        stage('Integration Test') {
-            steps{
-            	echo 'Test Integration'
-            	bat 'npm --prefix ./frontend run test -- --watchAll=false'
+		bat 'npm --prefix ./frontend run test -- --watchAll=false'
             }
         }
         stage('Release') {
