@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+    	stage('Environment') {
+	      steps {
+	        bat 'git --version'
+	        bat 'docker -v'
+	      }
+	    }
         stage('Docker Build') {
             steps{
             	echo 'Docker Build'
