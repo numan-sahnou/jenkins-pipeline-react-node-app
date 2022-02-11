@@ -27,7 +27,8 @@ pipeline {
                 bat 'git push --set-upstream origin release'
             }
         }*/
-	post {
+    }
+    post {
 	    always {
 	      echo 'Stage to release'
             	bat 'git checkout release'
@@ -38,5 +39,4 @@ pipeline {
                 bat 'git push --set-upstream origin release'
 	    }
 	  }
-    }
 }
