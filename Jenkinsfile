@@ -16,7 +16,7 @@ pipeline {
 		//bat 'npm --prefix ./frontend test -- --watchAll=false'
             }
         }
-        stage('Release') {
+        /*stage('Release') {
             steps{
             	echo 'Stage to release'
             	bat 'git checkout release'
@@ -26,6 +26,6 @@ pipeline {
                 //bat 'git commit -am "push to release"'
                 bat 'git push --set-upstream origin release'
             }
-        }
+        }*/
     }
 }
