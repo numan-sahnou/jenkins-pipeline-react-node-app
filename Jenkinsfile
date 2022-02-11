@@ -20,6 +20,7 @@ pipeline {
             	echo 'Stage to release'
             	bat 'git checkout release'
                 bat 'git merge origin/dev'
+		bat 'git commit -am "Merged dev branch to release'
                 bat 'git push'
             }
         }
