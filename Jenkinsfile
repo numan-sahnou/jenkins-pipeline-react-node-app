@@ -23,7 +23,7 @@ pipeline {
 		bat 'git merge origin/dev'
 		bat 'git config user.name numan-sahnou'
                 bat 'git config user.email numan.sahnou@efrei.net'
-                git 'add . && git commit -am "push to release"'
+                bat 'git add . && git commit -am "push to release"'
                 bat 'git push'
             }
         }
