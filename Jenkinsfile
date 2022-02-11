@@ -21,8 +21,8 @@ pipeline {
 	    always {
 	      echo 'Stage to release'
             	bat 'git checkout release'
-                bat 'git commit -am "push to release"'
-                bat 'git push --set-upstream origin release'
+                bat 'git merge origin/dev'
+                bat 'git push origin release'
 	    }
 	  }
 }
