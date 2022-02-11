@@ -20,7 +20,7 @@ pipeline {
             	echo 'Stage to release'
             	bat 'git checkout release'
                 bat 'git merge origin/dev'
-                bat 'git push'
+                bat 'git push --set-upstream origin release'
             }
         }
     }
