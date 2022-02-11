@@ -16,13 +16,16 @@ pipeline {
 		//bat 'npm --prefix ./frontend test -- --watchAll=false'
             }
         }
-        /*stage('Release') {
+        stage('Release') {
             steps{
             	echo 'Stage to release'
             	bat 'git checkout release'
-                bat 'git merge origin/dev'
-                bat 'git push --verbose'
+		bat 'git merge origin/dev'
+		bat 'git config user.name numan-sahnou'
+                bat 'git config user.email numan.sahnou@efrei.net'
+                git 'add . && git commit -am "push to release"'
+                bat 'git push'
             }
-        }*/
+        }
     }
 }
