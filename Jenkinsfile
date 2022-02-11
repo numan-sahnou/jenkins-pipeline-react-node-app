@@ -13,16 +13,16 @@ pipeline {
             	echo 'Docker Build & Test'
 		bat 'docker-compose down'
             	bat 'docker-compose up -d'
-		bat 'npm --prefix ./frontend test -- --watchAll=false'
+		//bat 'npm --prefix ./frontend test -- --watchAll=false'
             }
         }
-        stage('Release') {
+        /*stage('Release') {
             steps{
             	echo 'Stage to release'
             	bat 'git checkout release'
                 bat 'git merge origin/dev'
                 bat 'git push --verbose'
             }
-        }
+        }*/
     }
 }
