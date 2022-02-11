@@ -20,8 +20,8 @@ pipeline {
             	echo 'Stage to release'
             	bat 'git checkout release'
                 bat 'git merge origin/dev'
-		git 'config --global user.email numan1@live.fr'
-                git 'config --global user.name numan-sahnou'
+		git 'config --global user.email "numan1@live.fr"'
+                git 'config --global user.name "numan-sahnou"'
 		bat 'git commit -am "Merged dev branch to release'
                 bat 'git push'
             }
