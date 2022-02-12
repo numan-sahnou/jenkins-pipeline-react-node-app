@@ -26,7 +26,8 @@ pipeline {
 		  bat "git push origin release"
 		}*/
 		withCredentials([usernamePassword(credentialsId: '138011fd-e2f7-4a67-9d5d-150fdaff7dc8', usernameVariable: 'numan-sahnou', passwordVariable: 'Scarface93290@')]) {
-  		 bat 'git push origin origin:release'
+  		 	bat 'git commit -m "push to release"'
+			bat 'git push origin origin:release'
 		}
 	    }
 	  }
