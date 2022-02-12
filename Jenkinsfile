@@ -22,9 +22,12 @@ pipeline {
 	      echo 'Stage to release'
             	bat 'git checkout release'
                 bat 'git merge origin/dev'
-		sshagent(['138011fd-e2f7-4a67-9d5d-150fdaff7dc8']) {
+		/*sshagent(['138011fd-e2f7-4a67-9d5d-150fdaff7dc8']) {
 		  bat "git push origin release"
-		} 
+		}*/
+		withCredentials([sshUserPrivateKey(credentialsId: '138011fd-e2f7-4a67-9d5d-150fdaff7dc8', keyFileVariable: 'SSH_KEY')]) {
+  		 bat 'git push origin origin:release'
+		}
 	    }
 	  }
 }
