@@ -25,7 +25,7 @@ pipeline {
 		/*sshagent(['138011fd-e2f7-4a67-9d5d-150fdaff7dc8']) {
 		  bat "git push origin release"
 		}*/
-		withCredentials([sshUserPrivateKey(credentialsId: '138011fd-e2f7-4a67-9d5d-150fdaff7dc8', keyFileVariable: 'SSH_KEY')]) {
+		withCredentials([usernamePassword(credentialsId: '138011fd-e2f7-4a67-9d5d-150fdaff7dc8', usernameVariable: 'numan-sahnou', passwordVariable: 'Scarface93290@')]) {
   		 bat 'git push origin origin:release'
 		}
 	    }
