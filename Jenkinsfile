@@ -20,13 +20,11 @@ pipeline {
     post {
 	    success {
 	      echo 'Stage to release'
-            	//bat 'git checkout release'
+            	bat 'git checkout release'
                 bat 'git merge origin/dev'
-		    
-		bat 'git config --global user.email numan1@live.fr'
-		bat 'git config --global user.name numan-sahnou'
-		bat 'git commit -am "Merged develop branch to release"'
-		bat 'git push origin release'
+		sshagent(['138011fd-e2f7-4a67-9d5d-150fdaff7dc8']) {
+		  bat "git push origin release"
+		} 
 	    }
 	  }
 }
