@@ -17,7 +17,7 @@ pipeline {
         }
 	stage('Integration Tests'){
             steps{
-                //bat 'npm install --prefix ./frontend run' 
+		bat 'npm install' 
                 bat 'npm --prefix ./frontend run test --watchAll=false --forceExit'
             }
         }
