@@ -15,12 +15,12 @@ pipeline {
             	bat 'docker-compose up -d'
             }
         }
-	stage('Integration Tests'){
+	/*stage('Integration Tests'){
             steps{
-		bat 'npm install' 
+		bat 'npm install --prefix ./frontend run' 
                 bat 'npm --prefix ./frontend run test --watchAll=false --forceExit'
             }
-        }
+        }*/
     }
     post {
 	    success {
