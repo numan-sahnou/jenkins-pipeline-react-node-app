@@ -28,7 +28,7 @@ pipeline {
             	bat 'git checkout release'
 		bat 'git add .'
                 bat 'git diff --quiet && git diff --staged --quiet || git commit -am "Change for release"'
-                bat 'git push'
+                bat 'git push --set-upstream origin release'
                 /*bat 'git merge origin/dev'
 		sshagent(['138011fd-e2f7-4a67-9d5d-150fdaff7dc8']) {
 		  bat "git push origin release"
