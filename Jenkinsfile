@@ -12,7 +12,7 @@ pipeline {
             steps{
             	echo 'Docker Build & Test'
 		bat 'docker-compose down'
-            	bat 'docker-compose up -d
+            	bat 'docker-compose up -d'
             }
         }
 	stage('Integration Tests'){
